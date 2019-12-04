@@ -4,10 +4,11 @@
  *
  * ** (metodos: TODO)
  */
-class cliente {
-  constructor(name, saldo) {
-    this.name = name;
+class Cliente {
+  constructor(email, saldo, creditoCartao) {
+    this.email = email;
     this.saldo = saldo;
+    this.creditoCartao = creditoCartao
   }
 
   saldoCliente() {
@@ -15,11 +16,11 @@ class cliente {
   }
 
   debito(valor) {
-    if (this.saldo <= valor) {
+    if (  valor <= this.saldo) {
       this.saldo = this.saldo - valor;
-      return false;
-    } else {
       return true;
+    } else {
+      return false;
     }
   }
 
@@ -29,4 +30,4 @@ class cliente {
   }
 }
 
-module.exports = cliente;
+module.exports = Cliente;
